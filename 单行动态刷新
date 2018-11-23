@@ -1,0 +1,13 @@
+import time
+scale=50
+print('{:-^70}'.format("start"))
+start=time.perf_counter()
+for i in range(0,51):
+    a='█'*i
+    b=' '*(scale-i)
+    c=(float(i)/scale)*100
+    end=time.perf_counter()
+    print('\r{:^6.2f}% [{}{}] {:^.2f}s'.format(c,a,b,end-start),end="")
+    time.sleep(0.1)
+print('\n')
+print('{:-^70}'.format("end"))
