@@ -1,0 +1,23 @@
+import re
+pattern=re.compile(正则表达式)
+result=pattern.findall(需要爬的源文本)'''findall返回一个列表'''
+.字符在正则表达式代表着可以代表任何一个字符（包括它本身）
++的作用是将前面一个字符或一个子表达式重复一遍或者多遍
+*跟在其他符号后面表达可以匹配到它0次或多次
+[]代表匹配里面的字符中的任意一个
+[^]代表除了内部包含的字符以外都能匹配
++后面加？表示非贪婪模式的+
+当然*就表示贪婪模式
+https://www.cnblogs.com/chuxiuhong/p/5885073.html
+
+打开网页
+import urllib
+import re 
+def get_html(url):
+    page = urllib.urlopen(url)
+    html = page.read()
+    return html
+urllib库中有一个 urllib.urlretrieve(链接,名字) 方法，它的作用是以第二个参数为名字下载链接中的内容
+for img in imglist:'''这里的imglist是findall后返回的列表'''
+    urllib.urlretrieve(img, '%s.jpg' %x)
+    x += 1
